@@ -4,36 +4,37 @@ import dash_html_components as html
 import plotly.graph_objs as go
 
 ########### Define your variables
-beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
-ibu_values=[35, 60, 85, 75]
-abv_values=[5.4, 7.1, 9.2, 4.3]
+#beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
+ingreso=[1000, 10000, 100000, 1000000]
+whisky=[0, 0, 5, 100]
+birra=[100, 80, 25, 3]
 color1='lightblue'
 color2='darkgreen'
-mytitle='Beer Comparison'
-tabtitle='beer!'
-myheading='Flying Dog Beers'
-label1='IBU'
-label2='ABV'
-githublink='https://github.com/austinlasseter/flying-dog-beers'
-sourceurl='https://www.flyingdog.com/beers/'
+mytitle='Guía gráfica de consumición de Whisky, para Juanma'
+tabtitle='Whisky'
+myheading='Guía gráfica de consumición de Whisky, para Juanma'
+label1='Whisky'
+label2='Cerveza'
+#githublink='https://github.com/austinlasseter/flying-dog-beers'
+#sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
-bitterness = go.Bar(
-    x=beers,
-    y=ibu_values,
+bitterness = go.scatter(
+    x=ingreso,
+    y=whisky,
     name=label1,
-    marker={'color':color1}
+    #marker={'color':color1}
 )
-alcohol = go.Bar(
-    x=beers,
-    y=abv_values,
+alcohol = go.scatter(
+    x=ingreso,
+    y=birra,
     name=label2,
-    marker={'color':color2}
+    #marker={'color':color2}
 )
 
 beer_data = [bitterness, alcohol]
 beer_layout = go.Layout(
-    barmode='group',
+    #barmode='group',
     title = mytitle
 )
 
@@ -52,10 +53,10 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='flyingdog',
         figure=beer_fig
-    ),
-    html.A('Code on Github', href=githublink),
-    html.Br(),
-    html.A('Data Source', href=sourceurl),
+    )#,
+    #html.A('Code on Github', href=githublink),
+    #html.Br(),
+    #html.A('Data Source', href=sourceurl),
     ]
 )
 
