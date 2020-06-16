@@ -19,13 +19,13 @@ label2='Cerveza'
 #sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
-bitterness = go.scatter(
+bitterness = go.Scatter(
     x=ingreso,
     y=whisky,
     name=label1,
     #marker={'color':color1}
 )
-alcohol = go.scatter(
+alcohol = go.Scatter(
     x=ingreso,
     y=birra,
     name=label2,
