@@ -22,14 +22,12 @@ label2='Cerveza'
 bitterness = go.Scatter(
     x=ingreso,
     y=whisky,
-    name=label1,
-    #marker={'color':color1}
+    name=label1
 )
 alcohol = go.Scatter(
     x=ingreso,
     y=birra,
-    name=label2,
-    #marker={'color':color2}
+    name=label2
 )
 
 beer_data = [bitterness, alcohol]
